@@ -12,6 +12,8 @@ import hashlib
 import json
 from flask import Flask, jsonify, request
 import requests
+from uuid import uuid4
+from urllib.parse import urllib
 
 # Part 1 - Buiding a Blockchain
 
@@ -110,6 +112,11 @@ def is_valid():
     else:
         response = {'message': 'Blockchain is not valid'}
     return jsonify(response), 200
+
+
+# PART 3 ----     Decentralising our Blockchain 
+
+
 
 # Running the app
     
