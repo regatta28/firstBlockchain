@@ -10,7 +10,8 @@
 import datetime
 import hashlib
 import json
-from flask import Flask, jsonify, requests
+from flask import Flask, jsonify, request
+import requests
 
 # Part 1 - Buiding a Blockchain
 
