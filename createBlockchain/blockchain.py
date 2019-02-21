@@ -14,6 +14,8 @@ import hashlib
 import json
 from flask import Flask, jsonify
 
+
+
 # Part 1 - Buiding a Blockchain
 
 class Blockchain:

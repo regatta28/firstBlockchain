@@ -13,7 +13,7 @@ import json
 from flask import Flask, jsonify, request
 import requests
 from uuid import uuid4
-from urllib.parse import urllib
+from urllib.parse import urlparse
 
 # Part 1 - Buiding a Blockchain
 
@@ -21,6 +21,7 @@ class Blockchain:
     
     def __init__(self):
         self.chain = []
+        self.transactions = []
         self.create_block(proof = 1, previous_hash = '0')
         
     def create_block(self, proof, previous_hash):
