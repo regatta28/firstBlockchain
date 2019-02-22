@@ -76,6 +76,7 @@ class Blockchain:
 app = Flask(__name__)
 
 
+
 # Creating a Blockchain
 
 blockchain = Blockchain()
