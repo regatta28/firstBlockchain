@@ -71,7 +71,7 @@ class Blockchain:
         return True
     
     def add_transaction(self, sender, receiver, amount):
-        self.transactions.append ({
+        self.transactions.append({
                 'sender': sender,
                 'receiver': receiver,
                 'amount': amount})
