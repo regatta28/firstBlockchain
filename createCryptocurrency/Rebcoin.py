@@ -71,10 +71,10 @@ class Blockchain:
         return True
     
     def add_transaction(self, sender, receiver, amount):
-        self.transactions = {
+        self.transactions.append ({
                 'sender': sender,
                 'receiver': receiver,
-                'amount': amount}
+                'amount': amount})
         previous_block = self.get_previous_block()
         return previous_block['index'] + 1
     
@@ -128,7 +128,7 @@ def mine_block():
                 'timestamp': block['timestamp'],
                 'proof': block['proof'],
                 'previous_hash': block['previous_hash'],
-                'transaction': block['transactions']}
+                'transactions': block['transactions']}
     return jsonify(response), 200
             
 
@@ -161,7 +161,7 @@ def add_transaction():
     transaction_keys = ['sender', 'receiver', 'amount']
     if not all (key in json for key in transaction_keys):
         return 'Some elements of the transaction are missing.', 400
-    index = blockchain.add_transaction(json['sender'], json['receiver'], ['amount'])
+    index = blockchain.add_transaction(json['sender'], json['receiver'], json['amount'])
     response = {'message': f'This transaction will be added to block {index}'}
     return jsonify(response), 201
     
