@@ -70,7 +70,7 @@ class Blockchain:
             block_index +=1
         return True
     
-    def add_transactions(self, sender, receiver, amount):
+    def add_transaction(self, sender, receiver, amount):
         self.transactions = {
                 'sender': sender,
                 'receiver': receiver,

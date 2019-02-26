@@ -70,7 +70,7 @@ class Blockchain:
             block_index +=1
         return True
     
-    def add_transactions(self, sender, receiver, amount):
+    def add_transaction(self, sender, receiver, amount):
         self.transactions = {
                 'sender': sender,
                 'receiver': receiver,
@@ -128,7 +128,7 @@ def mine_block():
                 'timestamp': block['timestamp'],
                 'proof': block['proof'],
                 'previous_hash': block['previous_hash'],
-                'transaction': block['transactions']}
+                'transactions': block['transactions']}
     return jsonify(response), 200
             
 
