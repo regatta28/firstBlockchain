@@ -152,6 +152,22 @@ def is_valid():
     return jsonify(response), 200
 
 
+# Adding a new transaction to the Blockchain
+    
+@app.route('/add_transaction', methods = ['POST'])
+
+def add_transaction():
+    json = request.get_json()
+    transaction_keys = ['sender', 'receiver', 'amount']
+    if not all (key in json for key in transaction_keys):
+        return 'Some elements of the transaction are missing.', 400
+    index = blockchain.add_transaction(json['sender'], json['receiver'], ['amount'])
+    response = {'message': f'This transaction will be added to block {index}'}
+    return jsonify(response), 201
+    
+
+
+
 # PART 3 ----     Decentralising our Blockchain 
 
 
